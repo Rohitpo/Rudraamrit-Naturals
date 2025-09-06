@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rudraamrit Naturals | Pure Natural Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #4caf50;
+            --dark-green: #1b5e20;
+            --cream: #f1f8e9;
+            --brown: #5d4037;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #fff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-green);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-left: 10px;
+            color: var(--primary-green);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-green);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Introduction Section */
+        .intro {
+            background-color: var(--cream);
+        }
+        
+        .intro-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .intro-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .intro-text h2 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+        
+        .intro-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .intro-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        /* Categories Section */
+        .categories {
+            background-color: var(--white);
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .category-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .category-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .category-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .category-card:hover .category-img img {
+            transform: scale(1.1);
+        }
+        
+        .category-content {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .category-content h3 {
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--cream);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .about-text h2 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+        
+        .about-gallery {
+            flex: 1;
+            min-width: 300px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Products Section */
+        .products {
+            background-color: var(--white);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product-content h3 {
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+        
+        .product-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .product-content .btn {
+            width: 100%;
+            text-align: center;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--cream);
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--primary-green);
+            width: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-green);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--light-green);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 20px;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 40px 20px;
+                transition: 0.5s;
+                box-shadow: var(--shadow);
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .intro-text,
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI1IDVDMTQuNzgwOSA1IDYuNSAxMy4yODA5IDYuNSAyMy41QzYuNSAzMy43MTkxIDE0LjI4MDkgNDIgMjQuNSA0MkMzNC43MTkxIDQyIDQyLjUgMzMuNzE5MSA0Mi41IDIzLjVDNDIuNSAxMy4yODA5IDM0LjcxOTEgNSAyNSA1WiIgZmlsbD0iIzJlN2QzMiIvPgo8cGF0aCBkPSJNMzIuNSA0MUMzNC43MDg1IDM5LjA3NjIgMzYuMzQ1NiAzNi40Mzc1IDM3LjE2MjYgMzMuNDM3NUMzNy45Nzk3IDMwLjQzNzUgMzcuOTU2NiAyNy4yMzQ0IDM3LjEyNSAyNC4yNUMzNi4yOTM0IDIxLjI2NTYgMzQuNjgxOCAxOC42MzQ0IDMyLjUgMTYuNzVMMjUgMjQuMjVMMzIuNSA0MVoiIGZpbGw9IiM0Y2FmNTAiLz4KPHBhdGggZD0iTTE3LjUgMTYuNzVDMTUuMzE4MiAxOC42MzQ0IDEzLjcwNjYgMjEuMjY1NiAxMi44NzUgMjQuMjVDMTIuMDQzNCAyNy4yMzQ0IDEyLjAyMDMgMzAuNDM3NSAxMi44Mzc0IDMzLjQzNzVDMTMuNjU0NCAzNi40Mzc1IDE1LjI5MTUgMzkuMDc2MiAxNy41IDQxTDI1IDI0LjI1TDE3LjUgMTYuNzVaIiBmaWxsPSIjMWI1ZTIwIi8+Cjwvc3ZnPgo=" alt="Rudraamrit Naturals Logo">
+                <h1>Rudraamrit Naturals</h1>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Go Natural – Where Nature Brings Goodness to Your Table</h2>
+            <p>Experience the purity of nature with our farm-fresh, organic products</p>
+            <a href="#products" class="btn">Click here for more details</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2>Welcome to Rudraamrit Naturals</h2>
+                    <p>At Rudraamrit Naturals, we believe in the power of nature to nourish and heal. Our mission is to bring you the purest, most natural products directly from our farms to your table.</p>
+                    <p>We are committed to sustainable farming practices that respect the environment and promote biodiversity. Our products are free from harmful chemicals, pesticides, and artificial additives.</p>
+                    <p>Choose Rudraamrit Naturals for a healthier lifestyle and a greener planet.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="Images/welcome image.jpg" alt="Organic Farm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Categories</h2>
+                <p>Explore our range of natural products carefully curated for your wellness</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="Images/honey.jpg" alt="Honey">
+                    </div>
+                    <div class="category-content">
+                        <h3>Pure Honey</h3>
+                        <p>100% natural, raw honey sourced directly from beekeepers. Our honey is unprocessed and retains all its natural enzymes and health benefits.</p>
+                        <a href="#products" class="btn">Explore</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="Images/black peper.jpg" alt="Black Pepper">
+                    </div>
+                    <div class="category-content">
+                        <h3>Black Pepper</h3>
+                        <p>Organically grown black pepper with intense aroma and flavor. Harvested at peak ripeness and sun-dried to preserve its essential oils.</p>
+                        <a href="#products" class="btn">Explore</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="Images/back 5.jpg" alt="Other Products">
+                    </div>
+                    <div class="category-content">
+                        <h3>Other Products</h3>
+                        <p>Discover our range of other natural products including spices, herbs, and organic staples that will transform your cooking experience.</p>
+                        <a href="#products" class="btn">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>Our journey towards natural goodness</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Rudraamrit Naturals</h2>
+                    <p>Founded in 2010, Rudraamrit Naturals began as a small family farm with a vision to provide chemical-free, natural products to health-conscious consumers. Today, we've grown into a trusted brand while maintaining our commitment to purity and sustainability.</p>
+                    <p>Our values are rooted in respect for nature, ethical farming practices, and transparency. We work directly with local farmers who share our vision, ensuring fair trade and supporting rural communities.</p>
+                    <p>Every product in our collection is carefully sourced, processed without chemicals, and packaged sustainably to minimize environmental impact.</p>
+                </div>
+                <div class="about-gallery">
+                    <div class="gallery-item">
+                        <img src="Images/background.jpg" alt="Our Farm">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Images/back3.jpg" alt="Harvesting">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Images/teset back (1).jpg" alt="Our Products">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Images/welcome image.jpg" alt="Team">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+                <p>Discover our range of natural products</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="Images/wild honey.jpg" alt="Wild Forest Honey">
+                    </div>
+                    <div class="product-content">
+                        <h3>Wild Forest Honey</h3>
+                        <p>Pure, unprocessed honey collected from deep forests. Rich in flavor and nutrients.</p>
+                        <a href="https://wa.me/9538869220?text=I'm%20interested%20in%20Wild%20Forest%20Honey" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="Images/black pepper cat.jpg" alt="Organic Black Pepper">
+                    </div>
+                    <div class="product-content">
+                        <h3>Organic Black Pepper</h3>
+                        <p>Sun-dried black pepper with intense aroma and flavor. Organically grown.</p>
+                        <a href="https://wa.me/9538869220?text=I'm%20interested%20in%20Organic%20Black%20Pepper" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="Images/turmeric powder.jpg" alt="Turmeric Powder">
+                    </div>
+                    <div class="product-content">
+                        <h3>Turmeric Powder</h3>
+                        <p>100% pure turmeric powder with high curcumin content. Great for cooking and health.</p>
+                        <a href="https://wa.me/9538869220?text=I'm%20interested%20in%20Turmeric%20Powder" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="Images/coldpress oil.jpg" alt="Coconut Oil">
+                    </div>
+                    <div class="product-content">
+                        <h3>Cold-Pressed Coconut Oil</h3>
+                        <p>Virgin coconut oil extracted without heat. Retains all natural nutrients and aroma.</p>
+                        <a href="https://wa.me/9538869220?text=I'm%20interested%20in%20Cold-Pressed%20Coconut%20Oil" class="btn">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for any inquiries</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-phone"></i> +91 9538869220</p>
+                        <p><i class="fas fa-envelope"></i> rudraamritnatuals@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Tolgod karnatak </p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/9538869220"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Rudraamrit Naturals</h4>
+                    <p>Bringing nature's goodness to your table since 2010. Pure, natural, and sustainable products for your family.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#products">Honey</a></li>
+                        <li><a href="#products">Black Pepper</a></li>
+                        <li><a href="#products">Spices</a></li>
+                        <li><a href="#products">Organic Staples</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 9538869220</li>
+                        <li><i class="fas fa-envelope"></i> rudraamritnatuals@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Tolgod karnataka </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Rudraamrit Naturals. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.getElementById('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
