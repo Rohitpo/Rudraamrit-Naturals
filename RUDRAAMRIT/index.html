@@ -148,17 +148,37 @@
             cursor: pointer;
             color: var(--primary-green);
         }
-        
-        /* Hero Section */
+
+
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            background: 
+                linear-gradient(#4b3e3e66, rgba(0, 0, 0, 0.4)),
+                url('images/backgr.png'),
+                url('https://drive.google.com/uc?export=view&id=12SCURtRIR-6d9mS-Z-o9KT-0S9coNw6V');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
             display: flex;
+            flex-direction: column; /* Stack content vertically */
+            justify-content: center; /* Center text vertically */
             align-items: center;
             text-align: center;
             color: var(--white);
             padding-top: 80px;
+            position: relative; /* Needed for absolute button positioning */
         }
+
+        .hero-btn-wrapper {
+            position: absolute;
+            bottom: 40px;  /* distance from bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+
         
         .hero-content {
             max-width: 800px;
@@ -176,6 +196,10 @@
             font-size: 1.2rem;
             margin-bottom: 30px;
         }
+        .hidden {
+            display: none;
+        }
+
         
         /* Introduction Section */
         .intro {
@@ -206,11 +230,16 @@
         }
         
         .intro-image img {
-            width: 100%;
+            max-width: 350px;   /* limit maximum width */
+            width: 100%;        /* still responsive */
+            height: auto;       /* keep proportions */
             border-radius: 10px;
             box-shadow: var(--shadow);
+            display: block;
+            margin: 0 auto;     /* center the image */
         }
-        
+
+                
         /* Categories Section */
         .categories {
             background-color: var(--white);
@@ -583,6 +612,7 @@
     <header id="header">
         <div class="container header-container">
             <div class="logo">
+                
                 <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI1IDVDMTQuNzgwOSA1IDYuNSAxMy4yODA5IDYuNSAyMy41QzYuNSAzMy43MTkxIDE0LjI4MDkgNDIgMjQuNSA0MkMzNC43MTkxIDQyIDQyLjUgMzMuNzE5MSA0Mi41IDIzLjVDNDIuNSAxMy4yODA5IDM0LjcxOTEgNSAyNSA1WiIgZmlsbD0iIzJlN2QzMiIvPgo8cGF0aCBkPSJNMzIuNSA0MUMzNC43MDg1IDM5LjA3NjIgMzYuMzQ1NiAzNi40Mzc1IDM3LjE2MjYgMzMuNDM3NUMzNy45Nzk3IDMwLjQzNzUgMzcuOTU2NiAyNy4yMzQ0IDM3LjEyNSAyNC4yNUMzNi4yOTM0IDIxLjI2NTYgMzQuNjgxOCAxOC42MzQ0IDMyLjUgMTYuNzVMMjUgMjQuMjVMMzIuNSA0MVoiIGZpbGw9IiM0Y2FmNTAiLz4KPHBhdGggZD0iTTE3LjUgMTYuNzVDMTUuMzE4MiAxOC42MzQ0IDEzLjcwNjYgMjEuMjY1NiAxMi44NzUgMjQuMjVDMTIuMDQzNCAyNy4yMzQ0IDEyLjAyMDMgMzAuNDM3NSAxMi44Mzc0IDMzLjQzNzVDMTMuNjU0NCAzNi40Mzc1IDE1LjI5MTUgMzkuMDc2MiAxNy41IDQxTDI1IDI0LjI1TDE3LjUgMTYuNzVaIiBmaWxsPSIjMWI1ZTIwIi8+Cjwvc3ZnPgo=" alt="Rudraamrit Naturals Logo">
                 <h1>Rudraamrit Naturals</h1>
             </div>
@@ -604,9 +634,11 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h2>Go Natural – Where Nature Brings Goodness to Your Table</h2>
-            <p>Experience the purity of nature with our farm-fresh, organic products</p>
-            <a href="#products" class="btn">Click here for more details</a>
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="hero-btn-wrapper">
+            <a href="#products" class="btn hidden" id="delayed-btn">Click here for more details</a>
         </div>
     </section>
 
@@ -621,7 +653,7 @@
                     <p>Choose Rudraamrit Naturals for a healthier lifestyle and a greener planet.</p>
                 </div>
                 <div class="intro-image">
-                    <img src="Images/welcome image.jpg" alt="Organic Farm">
+                    <img src="images/welcomeimage.jpg" alt="Organic Farm">
                 </div>
             </div>
         </div>
@@ -637,7 +669,7 @@
             <div class="category-grid">
                 <div class="category-card">
                     <div class="category-img">
-                        <img src="Images/honey.jpg" alt="Honey">
+                        <img src="images/honey.jpg" alt="Honey">
                     </div>
                     <div class="category-content">
                         <h3>Pure Honey</h3>
@@ -647,7 +679,7 @@
                 </div>
                 <div class="category-card">
                     <div class="category-img">
-                        <img src="Images/black peper.jpg" alt="Black Pepper">
+                        <img src="images/blackpeppercat.jpg" alt="Black Pepper">
                     </div>
                     <div class="category-content">
                         <h3>Black Pepper</h3>
@@ -657,7 +689,7 @@
                 </div>
                 <div class="category-card">
                     <div class="category-img">
-                        <img src="Images/back 5.jpg" alt="Other Products">
+                        <img src="images/back5.jpg" alt="Other Products">
                     </div>
                     <div class="category-content">
                         <h3>Other Products</h3>
@@ -679,7 +711,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>About Rudraamrit Naturals</h2>
-                    <p>Founded in 2010, Rudraamrit Naturals began as a small family farm with a vision to provide chemical-free, natural products to health-conscious consumers. Today, we've grown into a trusted brand while maintaining our commitment to purity and sustainability.</p>
+                    <p>Founded in 2024, Rudraamrit Naturals began as a small family farm with a vision to provide chemical-free, natural products to health-conscious consumers. Today, we've grown into a trusted brand while maintaining our commitment to purity and sustainability.</p>
                     <p>Our values are rooted in respect for nature, ethical farming practices, and transparency. We work directly with local farmers who share our vision, ensuring fair trade and supporting rural communities.</p>
                     <p>Every product in our collection is carefully sourced, processed without chemicals, and packaged sustainably to minimize environmental impact.</p>
                 </div>
@@ -691,10 +723,10 @@
                         <img src="Images/back3.jpg" alt="Harvesting">
                     </div>
                     <div class="gallery-item">
-                        <img src="Images/teset back (1).jpg" alt="Our Products">
+                        <img src="images/tesetback.jpg" alt="Our Products">
                     </div>
                     <div class="gallery-item">
-                        <img src="Images/welcome image.jpg" alt="Team">
+                        <img src="images/welcomeimage.jpg" alt="Team">
                     </div>
                 </div>
             </div>
@@ -711,7 +743,7 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="Images/wild honey.jpg" alt="Wild Forest Honey">
+                        <img src="images/wildhoney.jpg" alt="Wild Forest Honey">
                     </div>
                     <div class="product-content">
                         <h3>Wild Forest Honey</h3>
@@ -721,7 +753,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="Images/black pepper cat.jpg" alt="Organic Black Pepper">
+                        <img src="images/blackpeppercat.jpg" alt="Organic Black Pepper">
                     </div>
                     <div class="product-content">
                         <h3>Organic Black Pepper</h3>
@@ -731,7 +763,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="Images/turmeric powder.jpg" alt="Turmeric Powder">
+                        <img src="images/turmericpowder.jpg" alt="Turmeric Powder">
                     </div>
                     <div class="product-content">
                         <h3>Turmeric Powder</h3>
@@ -848,6 +880,14 @@
             mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
             mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
         });
+
+        // Show "Click here for more details" after 5 seconds
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                document.getElementById("delayed-btn").classList.remove("hidden");
+            }, 5000); // 5000 ms = 5 seconds
+        });
+
         
         // Header Scroll Effect
         const header = document.getElementById('header');
